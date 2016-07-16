@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+    while ! curl -s http://db:3306 > /dev/null
+    do
+      echo "$(date) - wait db"
+      sleep 1
+    done
+    echo "$(date) - connected successfully"
+

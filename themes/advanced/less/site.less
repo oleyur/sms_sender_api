@@ -1,0 +1,258 @@
+@import 'variables.less';
+
+html,
+body {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -@footer-height;
+  padding: 0 0 @footer-height;
+}
+
+.wrap > .container {
+  padding: 70px 15px 20px;
+}
+
+/* add red asterisk to required form fields */
+div.required label:after {
+  content: " *";
+  color: #e13431;
+}
+
+/* add arrows to sortable columns */
+table > thead > tr > th > a:after {
+  content: " \2191\2193 ";
+}
+
+ul {
+  list-style: outside none none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb {
+  background: transparent;
+}
+
+.table > thead > tr > th:last-child {
+  min-width: 50px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+a:focus {
+  outline: none;
+  outline-offset: 0;
+}
+
+body {
+  color: @color3;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+h2 {
+  margin-bottom: 40px;
+}
+
+a {
+  color: @color2;
+}
+
+footer {
+  height: @footer-height;
+  background-color: lighten(@color4, 10%);
+  border-top: 1px solid @color4;
+  padding-top: 20px;
+}
+
+a:hover, a:focus {
+  color: @color2-hover;
+  text-decoration: none;
+}
+
+.btn-default,
+.btn-primary {
+  border-radius: 3px;
+  border-width: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.18);
+  //transition: all 0.1s ease 0.1s;
+  display: inline-block;
+  color: @color1;
+  background: @color2;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-default:hover,
+.btn-primary:hover,
+.btn-default:active,
+.btn-primary:active,
+.btn-default:focus,
+.btn-primary:focus {
+  color: @color1 !important;
+  background: @color2-hover !important;
+  outline: none !important;
+}
+
+.well {
+  border: 1px solid @color4;
+  border-radius: 2px;
+  background: @color1;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  background-color: @color1;
+  border: 1px solid @color4;
+  border-radius: 2px;
+  height: 40px;
+  outline: medium none;
+  padding: 0 10px;
+  resize: none;
+  vertical-align: middle;
+}
+
+select.form-control {
+  max-width: 100%;
+  height: 40px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  border: 1px solid @color4;
+  display: block;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 8px 42px 8px 8px;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: @color1 url(/images/select.png) no-repeat right center;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 @color3;
+}
+
+select.form-control option {
+  padding: 8px;
+}
+
+.form-control:focus {
+  border-color: @color2;
+}
+
+.auth-clients {
+  //width: 145px;
+  width: 65px;
+  margin: 0 auto;
+}
+
+.profile-img-box img {
+  border-radius: 100%;
+  display: inline-block;
+  margin: 10px 0;
+  width: 30%;
+  background-color: @color1;
+  border: 1px solid @color4;
+  height: auto;
+  max-width: 100%;
+  padding: 3px;
+}
+
+.ui-datepicker {
+  .ui-widget-header {
+    background: @color2;
+    border: 0;
+    color: @color1;
+  }
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    color: @color1;
+    cursor: pointer;
+  }
+  .ui-datepicker-prev-hover {
+    left: 2px;
+    top: 2px;
+    border: 0;
+  }
+  .ui-datepicker-next-hover {
+    right: 2px;
+    top: 2px;
+    border: 0;
+  }
+  .ui-state-default {
+    background: @color1;
+  }
+  .ui-state-highlight {
+    border-color: @color2;
+  }
+  .ui-state-hover {
+    background: @color2;
+    border-color: @color2;
+    color: @color1;
+  }
+}
+
+//hint css
+.form-group {
+  position: relative;
+}
+.app-help-block {
+  display: none;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 9px 14px;
+  color: #ececec !important;
+  font-size: 14px;
+  white-space: normal;
+  z-index: 1060;
+  background: rgba(101, 101, 101, 0.9) none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 2px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+.help-block-error {
+  font-size: 12px;
+  margin: 0;
+}
+
+//pagination
+.pagination > li > a, .pagination > li > span {
+  color: @color2;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: @color2;
+  border-color: @color2;
+  color: @color1;
+}
+
+/*############*/
+/*  SITE CSS  */
+/*############*/
+
+
+
+
+
+
