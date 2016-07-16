@@ -44,7 +44,7 @@ class UserProfile extends \yii\db\ActiveRecord
             [['gender'], 'in', 'range'=>[self::GENDER_FEMALE, self::GENDER_MALE]],
             [['firstname', 'middlename', 'lastname'], 'string', 'max' => 255],
             ['locale', 'default', 'value' => Yii::$app->language],
-            ['locale', 'in', 'range' => array_keys(Site::getLangs())],
+            //['locale', 'in', 'range' => array_keys(Site::getLangs())],
             ['picture', 'image', 'extensions' => 'jpg, jpeg, gif, png', 'skipOnEmpty' => true],
         ];
     }

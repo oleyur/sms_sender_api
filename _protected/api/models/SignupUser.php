@@ -15,6 +15,9 @@ class SignupUser extends Model
     public $email;
     public $password;
 
+    public $firstname;
+
+
     /**
      * @inheritdoc
      */
@@ -23,13 +26,15 @@ class SignupUser extends Model
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass'=>'\common\models\User', 'message' => Yii::t('frontend', 'This username has already been taken.')],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('frontend', 'This username has already been taken.')],
             ['username', 'string', 'min' => 2, 'max' => 255],
+
+            ['firstname', 'string', 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass'=> '\common\models\User', 'message' => Yii::t('frontend', 'This email address has already been taken.')],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('frontend', 'This email address has already been taken.')],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
@@ -39,9 +44,9 @@ class SignupUser extends Model
     public function attributeLabels()
     {
         return [
-            'username'=>Yii::t('frontend', 'Username'),
-            'email'=>Yii::t('frontend', 'E-mail'),
-            'password'=>Yii::t('frontend', 'Password'),
+            'username' => Yii::t('frontend', 'Username'),
+            'email'    => Yii::t('frontend', 'E-mail'),
+            'password' => Yii::t('frontend', 'Password'),
         ];
     }
 
@@ -59,14 +64,27 @@ class SignupUser extends Model
             $user->email = $this->email;
             $user->setPassword($this->password);
             $user->generateAuthKey();
-            $user->save();
+            $user->save(false);
+
             $user->afterSignup();
 
-            return $user;
+            /* @var $user_profile UserProfile */
+            $user_profile = UserProfile::find()->where(['user_id' => $user->id])->one();
+            $user_profile->firstname = $this->firstname;
+            $user_profile->lastname = $this->username;
+
+            $user_profile->update(false);
+
+            return [
+                'user'         => $user,
+                'user_profile' => $user_profile,
+            ];
         }
 
         return null;
+
     }
+
 }
 
 
