@@ -1,6 +1,5 @@
-yii2-advanced-template
 
-## sms_sender_api ##
+# sms_sender_api #
 ======================
 
 
