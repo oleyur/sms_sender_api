@@ -1,14 +1,6 @@
-yii2-advanced-template
+yii2-advanced-template,
+sms_sender_api
 ======================
-
-Start template, based on yii2-advanced-template
-
- 
-Features
--------------------
-
-- added rest api app
-- added to backend Admin LTE theme
 
 
 Installation
