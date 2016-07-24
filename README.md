@@ -30,7 +30,3 @@ Installation
  ``` _protected/common/config/main-local.php ``` 
  
 - ``` ./yii migrate ```
-
-------------------------
-
-API URL is http://{sitename}/api
