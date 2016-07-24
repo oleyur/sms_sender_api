@@ -40,15 +40,7 @@
 //                        'icon'=>'<i class="fa fa-bar-chart-o"></i>',
 //                        'url'=>['/system-event/timeline']
 //                    ],
-                [
-                    'label'=>Yii::t('backend', 'Content'),
-                    'icon'=>'<i class="fa fa-files-o"></i>',
-//                    'options'=>['class'=>'treeview'],
-                    'items'=>[
-                        ['label' => Yii::t('backend', 'Content1'), 'url' => ['/content1/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
-                        ['label' => Yii::t('backend', 'Content2'), 'url' => ['/content2/index'], 'icon' => '<i class="fa fa-circle-o"></i>'],
-                    ]
-                ],
+
                 [
                     'label'=>Yii::t('backend', 'Users'),
                     'icon'=>'<i class="fa fa-user"></i>',

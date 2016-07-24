@@ -44,7 +44,7 @@ class SignUpController extends ActiveController
             if (!$model->validate() && $model->hasErrors()) {
                 $response->data = $model->getErrors();
             } else {
-                $response->data = ['User not created for unknown reason'];
+                $response->data = 'User not created for unknown reason';
             }
             return $response;
         }

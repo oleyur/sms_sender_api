@@ -41,7 +41,7 @@ class LoginController extends ActiveController
             $response->data = $model->getErrors();
         } else {
             $response->setStatusCode(401);
-            $response->data = ['User not login for unknown reason'];
+            $response->data = $response->data = 'User not login for unknown reason';
         }
         return $response;
     }
